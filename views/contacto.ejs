@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos_form.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/imgs/tshirt.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Contacto - ARG DESIGN</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/"><img src="/imgs/logo11.png" alt="Logo de la compañia"></a>
+        </div>
+    </header>
+    <div class="container-fondo">
+        <div class="titulo">
+            <h5>¿Tenés alguna pregunta? ¡Envíala en el siguiente espacio y te contestaremos a la brevedad!</h5>
+        </div>
+
+        <div class="container-campos">
+            <form action="/contacto" method="post">
+                <!-- for y id tienen que coincidir(?) para bindearlos juntos -->
+
+                <fieldset>
+                    <div class="campo">
+                        <label for="nya">Nombre y apellido</label><br>
+                        <input type="text" id="nya" name="nya"><br>
+                    </div>
+                    <div class="campo">
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="campo">
+                        <label for="subject">Asunto</label>
+                        <textarea id="subject" name="subject" placeholder="Escriba aquí su mensaje."></textarea>
+                    </div>
+                    <div class="btnRegistro">
+                        <input type="submit" value="Enviar" class="boton">
+                    </div>
+
+                </fieldset>
+            </form>
+            <div class="recomendacionCuenta">
+                <a href="/">
+                    <button class="boton"><i class="fa fa-home"></i> Volver a la página principal</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <%- include('partials/footer') -%>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

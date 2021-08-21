@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos_form.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/imgs/tshirt.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Iniciar Sesión - ARG DESIGN</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/"><img src="/imgs/logo11.png" alt="Logo de la compañia"></a>
+        </div>
+    </header>
+
+    <% if (locals.msj) { %>
+        <div class="alert alert-danger center-block" role="alert"> <i class="fa fa-exclamation-triangle"
+                aria-hidden="true"></i> <strong>
+                <%=msj %>
+            </strong>
+        </div>
+        <% } %>
+
+            <div class="container-fondo">
+                <div class="titulo">
+                    <h5>Iniciar Sesión</h5>
+                </div>
+
+                <div class="container-campos">
+                    <form action="/usuarios/iniciar_sesion" method="post">
+                        <!-- for y id tienen que coincidir(?) para bindearlos juntos -->
+
+                        <fieldset>
+                            <div class="campo">
+                                <label for="email">Email</label><br>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="campo">
+                                <label for="pwd">Contraseña</label><br>
+                                <input type="password" id="pwd" name="pwd">
+                            </div>
+
+                            <div class=btnRegistro>
+                                <input type="submit" value="Continuar" class="boton">
+                            </div>
+
+                        </fieldset>
+                    </form>
+                    <div class="recomendacionCuenta">
+                        <p>¿No tenés una cuenta?</p>
+                        <a href="crear_cuenta">
+                            <button class="boton"><i class="fa fa-user" style="margin-right: 5px;"></i>Crear mi
+                                cuenta</button>
+                        </a>
+
+                    </div>
+                    <div class="recomendacionCuenta">
+                        <p>¿No recordás tu contraseña?</p>
+                        <a href="recuperar_pass">
+                            <button class="boton"><i class="fa fa-unlock" style="margin-right: 5px;"></i>Click
+                                aquí</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <%- include('partials/footer') -%>
+
+                <script src="./bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

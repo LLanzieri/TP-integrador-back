@@ -1,0 +1,93 @@
+* CAMBIAR crear cuenta - iniciar sesion despues de que el usuario se loguee por "CERRAR SESIÓN / SALIR".
+
+* CAMBIAR EL TIPITO DEL LOGIN por el AVATAR DEL USUARIO.
+
+* CUANDO ESTOY LOGUEADO, MOSTRAR BOTON "MIS PRODUCTOS" donde la idea seria buscar los productos cargados por el usuario y mostrarlos en la vista listadoProductos
+
+* ESTANDO YA EN LA SECCIÓN "MIS PRODUCTOS" - mostrar las opciones de editar y eliminar, en caso de editar se mostraría una copia de la vista para crear, pero con los datos del producto (GET PARA TRAER - POST PARA ENVIAR TODO), en caso de eliminar, ejecuto el delete con el id (ver si conviene GET O POST). 
+
+* ver si sale lo de la barra de busqueda
+
+* ver que hace el newsletter
+
+----------------------------------------------------------------
+	RUTAS
+----------------------------------------------------------------
+
+* /crear_usuario
+
+GET - mostrar vista
+POST - envio de datos para guardar en bd
+
+----------------------------------------------------------------
+
+* /iniciar_sesion
+
+GET - mostrar vista
+POST - envio de datos para chequear el usuario y contraseña
+
+----------------------------------------------------------------
+
+* /publicar
+
+GET - mostrar vista
+POST - envio de datos para cargarlos en bd
+
+----------------------------------------------------------------
+
+*	RUTAS /productos
+
+<VER TODO> -> /productos    , busco y muestro todo
+
+	(dependiendo de la implementación sobre filtros)
+
+- podemos usar /productos/:id , donde id sería:
+
+MUJER + INDUMENTARIA = 0
+MUJER + CALZADO = 1
+MUJER + ACCESORIO = 2 ....   entonces según el id que me llegue hago la consulta
+
+	(DE ESTA FORMA APLICARÍA UN SOLO FILTRO)
+
+- VARIOS FILTROS -> usar check a ver si se puede mostrar todo lo seleccionado.
+
+
+<MARCAS> -> /productos/:brand
+	
+GET - solamente muestro
+se enviaria: /productos/nike - /productos/adidas , se hace la consulta con el parámetro :brand y traigo todo lo que coincida
+
+<DEPORTE> -> /productos/:sport
+
+GET - solamente muestro
+se enviaria: /productos/tenis - /productos/futbol , se hace la consulta con el parámetro :sport y traigo todo lo que coincida
+
+----------------------------------------------------------------
+
+* /detalle
+
+GET - desde listadoProducto puedo enviar el id a /detalle/:id , con el parámetro buscarlo en la bd y mostrar en una vista "detalle" 
+
+
+----------------------------------------------------------------
+
+* /accesorios
+
+GET - mostrar vista listadoProductos con los productos donde CATEGORIA="ACCESORIO"
+
+----------------------------------------------------------------
+
+* /ofertas
+
+GET - mostrar vista listadoProductos con los productos donde el precio sea menor a 4000
+
+----------------------------------------------------------------
+
+* /contacto 
+
+GET - mostrar vista
+POST - para el envio de datos del formulario. (ver si se puede mandar mail, investigar NODEMAILER)
+
+----------------------------------------------------------------
+
+

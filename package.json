@@ -1,0 +1,31 @@
+{
+  "name": "TP-integrador-backend",
+  "version": "1.0.0",
+  "description": "<p><img src=\"https://img.icons8.com/color/48/000000/html-5--v1.png\"/>\r <img src=\"https://img.icons8.com/color/48/000000/css3.png\"/>\r   <img src=\"https://img.icons8.com/color/50/000000/javascript--v1.png\"/>\r  <img src=\"https://img.icons8.com/color/48/000000/nodejs.png\"/>\r   <img src=\"https://expressjs.com/images/express-facebook-share.png\"/width=100 >\r   <img src=\"https://img.icons8.com/color/48/000000/mongodb.png\"/>\r   <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png\"/width=55>\r </p>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLanzieri/TP-integrador-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LLanzieri/TP-integrador-backend/issues"
+  },
+  "homepage": "https://github.com/LLanzieri/TP-integrador-backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.7",
+    "multer": "^1.4.3",
+    "nodemailer": "^6.6.3"
+  }
+}

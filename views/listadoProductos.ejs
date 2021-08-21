@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos_listadoProducto.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/imgs/tshirt.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Listado de productos - ARG DESIGN</title>
+</head>
+
+<body>
+    <%- include('partials/cabecera') -%>
+
+        <!-- LISTA DE PRODUCTOS -->
+
+        <div class="wrap-container">
+            <h1>Escoge un producto</h1>
+            <div class="store-wrapper">
+                <div class="category-list">
+                    <a class="category-rama" href="">Todo</a>
+                    <hr>
+                    <form action="/productos/buscar" method="post">
+
+
+                        <div class="cat">
+                            <h5>Mujer</h5>
+                            <div class="scroll">
+                                <div class="tilde">
+                                    <input type="checkbox" name="indumentariaMujer" id="indumentariaMujer" <% if
+                                        (locals.rta) { %>
+                                    <% if (locals.rta.indumentariaMujer==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="indumentariaMujer">Indumentaria</label>
+                                </div>
+
+                                <div class="tilde">
+                                    <input type="checkbox" name="calzadoMujer" id="calzadoMujer" <% if (locals.rta) { %>
+                                    <% if (locals.rta.calzadoMujer==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="calzadoMujer">Calzado</label>
+                                </div>
+
+                                <div class="tilde">
+                                    <input type="checkbox" name="accesorioMujer" id="accesorioMujer" <% if (locals.rta)
+                                        { %>
+                                    <% if (locals.rta.accesorioMujer==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="accesorioMujer">Accesorios</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="cat">
+                            <h5>Hombre</h5>
+                            <div class="scroll">
+
+                                <div class="tilde">
+                                    <input type="checkbox" name="indumentariaHombre" id="indumentariaHombre" <% if
+                                        (locals.rta) { %>
+                                    <% if (locals.rta.indumentariaHombre==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="indumentariaHombre">Indumentaria</label>
+                                </div>
+
+                                <div class="tilde">
+                                    <input type="checkbox" name="calzadoHombre" id="calzadoHombre" <% if (locals.rta) {
+                                        %>
+                                    <% if (locals.rta.calzadoHombre==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="calzadoHombre">Calzado</label>
+                                </div>
+
+                                <div class="tilde">
+                                    <input type="checkbox" name="accesorioHombre" id="accesorioHombre" <% if
+                                        (locals.rta) { %>
+                                    <% if (locals.rta.accesorioHombre==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="accesorioHombre">Accesorios</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="cat">
+                            <h5>Niños</h5>
+                            <div class="scroll">
+
+                                <a href="" class="category-items">Indumentaria</a>
+                                <a href="" class="category-items">Calzado</a>
+                                <a href="" class="category-items">Accesorios</a>
+                                <a href="" class="category-items">Accesorios</a>
+                                <a href="" class="category-items">Accesorios</a>
+                                <a href="" class="category-items">Accesorios</a>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="cat">
+                            <h5>Sin Género</h5>
+                            <div class="scroll">
+
+                                <a href="" class="category-items">Indumentaria</a>
+                                <a href="" class="category-items">Calzado</a>
+                                <a href="" class="category-items">Accesorios</a>
+                                <a href="" class="category-items">Accesorios</a>
+                                <a href="" class="category-items">Accesorios</a>
+                                <a href="" class="category-items">Accesorios</a>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="cat">
+                            <h5>Deporte</h5>
+                            <div class="scroll">
+
+                                <a href="" class="category-items">Fútbol</a>
+                                <a href="" class="category-items">Basquet</a>
+                                <a href="" class="category-items">Tenis</a>
+                                <a href="" class="category-items">Natación</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="cat">
+                            <h5>Marcas</h5>
+                            <div class="scroll">
+
+                                <a href="" class="category-items">Nike</a>
+                                <a href="" class="category-items">Adidas</a>
+                                <a href="" class="category-items">Reebok</a>
+                            </div>
+                        </div>
+
+                        <input type="submit" id="buscar" value="Buscar" style="margin:15% auto; display:block;">
+                    </form>
+
+                </div>
+
+                <section class="products-list">
+                    <% for( let index=0; index < products.length; index++ ) { %>
+
+                        <div class="products-items">
+
+                            <img src='<%= products[index].imagen  %> ' alt='Imagen_producto'>
+
+
+                            <a href="./producto-detalle.html">
+                                <%= products[index].descrip %>
+                                    <br>
+                                    <p>
+                                        <%= products[index].marca %>
+                                    </p>
+
+                                    <p>
+                                        $ <%= products[index].precio %>
+                                    </p>
+                            </a>
+                        </div>
+                        <% } %>
+
+                </section>
+            </div>
+        </div>
+
+        <%- include('partials/newsletter') -%>
+
+            <%- include('partials/footer') -%>
+
+                <script src="/javascript_index.js"></script>
+                <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos_form.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/imgs/tshirt.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Publicar producto - ARG DESIGN</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/"><img src="/imgs/logo11.png" alt="Logo de la compañia"></a>
+        </div>
+    </header>
+    <div class="container-fondo">
+        <div class="titulo">
+            <h5>¡Publicá tu producto en nuestra página!</h5>
+        </div>
+
+        <form action="/productos/publicar" method="post" enctype="multipart/form-data">
+
+            <div class="container-campos">
+                <div class="campo-publicarProducto">
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero">
+                        <option value="mujer">Mujer</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="niños">Niños</option>
+                        <option value="sin género">Sin género</option>
+                    </select>
+                </div>
+                <div class="campo-publicarProducto">
+                    <label for="tipo_producto">Tipo de producto:</label>
+                    <select id="tipo_producto" name="tipo_producto">
+                        <option value="indumentaria">Indumentaria</option>
+                        <option value="calzado">Calzado</option>
+                        <option value="accesorios">Accesorios</option>
+                    </select>
+                </div>
+                <div class="campo-publicarProducto">
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria">
+                        <option value="infantil">Infantil</option>
+                        <option value="futbol">Fútbol</option>
+                        <option value="tenis">Tenis</option>
+                        <option value="basket">Basket</option>
+                        <option value="urban">Urban</option>
+                    </select>
+                </div>
+                <div class="campo-publicarProducto">
+                    <label for="marca">Marca:</label>
+                    <select id="marca" name="marca">
+                        <option value="nike">Nike</option>
+                        <option value="adidas">Adidas</option>
+                        <option value="reebok">Reebok</option>
+                        <option value="puma">Puma</option>
+                        <option value="fila">Fila</option>
+                    </select>
+                </div>
+                <div class="campo-publicarProducto">
+                    <label for="talle">Talle:</label>
+                    <select id="talle" name="talle">
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="noaplica">NO APLICA</option>
+                    </select>
+                </div>
+                <div class="campo-publicarProducto">
+                    <p>Fotos del producto</p>
+
+                    <label for="myfile">Foto de perfil:</label>
+                    <input type="file" id="myfile" name="myfile">
+                    <br>
+                    <label for="myfile1">Foto 1:</label>
+                    <input type="file" id="myfile1" name="myfile1">
+                    <br>
+                    <label for="myfile2">Foto 2:</label>
+                    <input type="file" id="myfile2" name="myfile2">
+                    <br>
+                    <label for="myfile3">Foto 3:</label>
+                    <input type="file" id="myfile3" name="myfile3">
+                </div>
+
+                <div class="campo-publicarProducto">
+                    <p>Información del producto</p>
+                    <label for="titulo">Título</label><br>
+                    <input type="text" id="titulo" name="title"><br>
+                </div>
+                <div class="campo-publicarProducto">
+                    <label for="description">Descripción</label><br>
+                    <textarea id="description" name="description" placeholder="Describa en detalle su producto.">
+                    </textarea>
+                </div>
+                <div class="campo-publicarProducto">
+                    <label for="price">Precio ($)</label><br>
+                    <input type="text" id="price" name="price"><br>
+                </div>
+                <div class="btnRegistro">
+                    <input type="submit" value="Continuar" class="boton">
+                </div>
+        </form>
+
+    </div>
+    <div class="recomendacionCuenta">
+        <a href="/">
+            <button class="boton"><i class="fa fa-home"></i> Volver a la página principal</button>
+        </a>
+    </div>
+
+    <%- include('partials/footer') -%>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
