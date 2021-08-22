@@ -23,10 +23,9 @@
             <h1>Escoge un producto</h1>
             <div class="store-wrapper">
                 <div class="category-list">
-                    <a class="category-rama" href="">Todo</a>
+                    <a class="category-rama" href="/productos">Todo</a>
                     <hr>
                     <form action="/productos/buscar" method="post">
-
 
                         <div class="cat">
                             <h5>Mujer</h5>
@@ -159,9 +158,9 @@
                     <% for( let index=0; index < products.length; index++ ) { %>
 
                         <div class="products-items">
-
-                            <img src='<%= products[index].imagenPerfil  %> ' alt='Imagen_producto'>
-
+                            <div class="img-producto">
+                                <img src='<%= products[index].imagenPerfil  %> ' alt='Imagen_producto'>
+                            </div>
 
                             <a href="./producto-detalle.html">
                                 <%= products[index].descrip %>

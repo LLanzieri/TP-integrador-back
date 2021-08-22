@@ -19,14 +19,11 @@
         <div class="logo">
             <a href="/"><img src="/imgs/logo11.png" alt="Logo de la compañia"></a>
         </div>
-
-
     </header>
     <div class="container-fondo">
         <div class="titulo">
-            <h5>¡Publicá tu producto en nuestra página!</h5>
+            <h5>Editar producto</h5>
         </div>
-
         <% if (locals.msj) { %>
             <div class="alert alert-danger center-block" style="width: 80%;" role="alert"> <i
                     class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>
@@ -35,44 +32,99 @@
             </div>
             <% } %>
 
-                <form action="/productos/publicar" method="post" enctype="multipart/form-data">
+                <form action="/productos/editarProducto/<%=producto[0]._id  %>" method="post"
+                    enctype="multipart/form-data">
 
                     <div class="campo-publicarProducto">
                         <label for="genero">Género:</label>
                         <select id="genero" name="genero">
-                            <option value="mujer">Mujer</option>
-                            <option value="hombre">Hombre</option>
-                            <option value="niños">Niños</option>
-                            <option value="sin género">Sin género</option>
+                            <option value="mujer" <% if (producto[0].genero==='mujer' ) { %>
+                                selected
+                                <% } %> >Mujer
+                            </option>
+                            <option value="hombre" <% if (producto[0].genero==='hombre' ) { %>
+                                selected
+                                <% } %>>Hombre
+                            </option>
+                            <option value="niños" <% if (producto[0].genero==='ninios' ) { %>
+                                selected
+                                <% } %>>Niños
+                            </option>
+                            <option value="sin género" <% if (producto[0].genero==='sinGenero' ) { %>
+                                selected
+                                <% } %>>Sin género
+                            </option>
                         </select>
+                        <br>
                     </div>
                     <div class="campo-publicarProducto">
                         <label for="tipo_producto">Tipo de producto:</label>
                         <select id="tipo_producto" name="tipo">
-                            <option value="indumentaria">Indumentaria</option>
-                            <option value="calzado">Calzado</option>
-                            <option value="accesorios">Accesorios</option>
+                            <option value="indumentaria" <% if (producto[0].tipo==='indumentaria' ) { %>
+                                selected
+                                <% } %>>Indumentaria
+                            </option>
+                            <option value="calzado" <% if (producto[0].tipo==='calzado' ) { %>
+                                selected
+                                <% } %>>Calzado
+                            </option>
+                            <option value="accesorios" <% if (producto[0].tipo==='accesorio' ) { %>
+                                selected
+                                <% } %>>Accesorios
+                            </option>
                         </select>
                     </div>
                     <div class="campo-publicarProducto">
                         <label for="categoria">Categoría:</label>
                         <select id="categoria" name="categoria">
-                            <option value="infantil">Infantil</option>
-                            <option value="futbol">Fútbol</option>
-                            <option value="tenis">Tenis</option>
-                            <option value="basket">Basket</option>
-                            <option value="urban">Urban</option>
+                            <option value="infantil" <% if (producto[0].categoria==='infantil' ) { %>
+                                selected
+                                <% } %>>Infantil
+                            </option>
+                            <option value="futbol" <% if (producto[0].categoria==='futbol' ) { %>
+                                selected
+                                <% } %>>Fútbol
+                            </option>
+                            <option value="tenis" <% if (producto[0].categoria==='tenis' ) { %>
+                                selected
+                                <% } %>>Tenis
+                            </option>
+                            <option value="basket" <% if (producto[0].categoria==='basket' ) { %>
+                                selected
+                                <% } %>>Basket
+                            </option>
+                            <option value="urban" <% if (producto[0].categoria==='urban' ) { %>
+                                selected
+                                <% } %>>Urban
+                            </option>
                         </select>
+
                     </div>
                     <div class="campo-publicarProducto">
                         <label for="marca">Marca:</label>
                         <select id="marca" name="marca">
-                            <option value="nike">Nike</option>
-                            <option value="adidas">Adidas</option>
-                            <option value="reebok">Reebok</option>
-                            <option value="puma">Puma</option>
-                            <option value="fila">Fila</option>
+                            <option value="nike" <% if (producto[0].marca==='nike' ) { %>
+                                selected
+                                <% } %>>Nike
+                            </option>
+                            <option value="adidas" <% if (producto[0].marca==='adidas' ) { %>
+                                selected
+                                <% } %>>Adidas
+                            </option>
+                            <option value="reebok" <% if (producto[0].marca==='reebok' ) { %>
+                                selected
+                                <% } %>>Reebok
+                            </option>
+                            <option value="puma" <% if (producto[0].marca==='puma' ) { %>
+                                selected
+                                <% } %>>Puma
+                            </option>
+                            <option value="fila" <% if (producto[0].marca==='fila' ) { %>
+                                selected
+                                <% } %>>Fila
+                            </option>
                         </select>
+
                     </div>
                     <div class="campo-publicarProducto">
                         <label for="talle">Talle:</label>
@@ -93,6 +145,9 @@
                             <option value="43">43</option>
                             <option value="noaplica">NO APLICA</option>
                         </select>
+                        <div class="alert alert-primary" role="alert">
+                            Selección actual: <%=producto[0].talle%>
+                        </div>
                     </div>
                     <div class="campo-publicarProducto">
                         <p>Fotos del producto</p>
@@ -113,18 +168,15 @@
                     <div class="campo-publicarProducto">
                         <p>Información del producto</p>
                         <label for="titulo">Título</label><br>
-                        <input type="text" id="titulo" name="title"><br>
+                        <input type="text" id="titulo" name="title" value=<%=producto[0].nombre%> ><br>
                     </div>
                     <div class="campo-publicarProducto">
                         <label for="description">Descripción</label><br>
-                        <!-- <textarea id="description" name="description" placeholder="AAAA">
-                    </textarea> -->
-                        <input type="text" id="description" name="description"
-                            placeholder="Describa en detalle su producto."><br>
+                        <input type="text" id="description" name="description" value=<%=producto[0].descrip%>><br>
                     </div>
                     <div class="campo-publicarProducto">
                         <label for="price">Precio ($)</label><br>
-                        <input type="text" id="price" name="price"><br>
+                        <input type="text" id="price" name="price" value=<%=producto[0].precio%>><br>
                     </div>
                     <div class="btnRegistro">
                         <input type="submit" value="Continuar" class="boton">

@@ -30,7 +30,7 @@ router.get('/misproductos', controller_productos.mostrar_misProductosView);
 
 //localhost/productos/publicar
 router.get('/publicar', verificarToken, controller_productos.mostrarVistaPublicar);
-router.post('/publicar',upload.any('myFile','myFile1','myFile2','myFile3'), controller_productos.crear_producto);
+router.post('/publicar', upload.any('myFile', 'myFile1', 'myFile2', 'myFile3'), controller_productos.crear_producto);
 
 //localhost/productos
 router.get('/', controller_productos.mostrar_productosView);
@@ -52,7 +52,14 @@ router.post('/buscar', controller_productos.buscarProductos);
 //localhost/productos/todos/accesorios
 router.get('/todos/accesorios', controller_productos.buscarAccesorios);
 
+//localhost/productos/todos/ofertas
+router.get('/todos/ofertas', controller_productos.buscarOfertas);
+
 //localhost/productos/eliminarProducto/:id
 router.get('/eliminarProducto/:id', controller_productos.eliminarProducto);
+
+//localhost/productos/editarProducto/:id
+router.get('/editarProducto/:id', controller_productos.editarProducto);
+router.post('/editarProducto/:id', upload.any('myFile', 'myFile1', 'myFile2', 'myFile3'), controller_productos.editarYguardar);
 
 module.exports = router;

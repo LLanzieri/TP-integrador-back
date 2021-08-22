@@ -10,6 +10,10 @@ body {
     display: none;
 }
 
+.btn_misproductos {
+    display: none;
+}
+
 .show {
     display: block;
 }
@@ -246,6 +250,16 @@ header {
     z-index: 999;
 }
 
+.cont-titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.cont-titulo img {
+    width: 7%;
+    margin: 10px;
+}
+
 /*LISTADO DE PRODUCTOS */
 
 .img-producto {
@@ -263,11 +277,12 @@ header {
 
 .wrap-container h1 {
     color: black;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
+    font-weight: 390;
+    /* display: flex;
+    flex-direction: column; */
     text-align: center;
-    margin: 15px 0px;
+    /* margin: 15px 0px; */
+    margin: auto 10px;
 }
 
 .wrap-container h1::after {
@@ -571,7 +586,7 @@ footer {
         cursor: pointer;
     }
     .products-list .products-items img {
-        width: 100%;
+        width: 70%;
         /* height: 45vh; */
     }
     .mensaje a, .titulo-footer, .cuerpo-footer p {

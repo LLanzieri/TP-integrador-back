@@ -20,43 +20,74 @@
         <!-- LISTA DE PRODUCTOS -->
 
         <div class="wrap-container">
-            <h1>Escoge un producto</h1>
-            <div class="store-wrapper">
+            <div class="cont-titulo">
+                <img src="/imgs/box.png" alt="img-productos">
+                <h1>Tus productos</h1>
+            </div>
+            <hr>
 
-                <section class="products-list">
-                    <% for( let index=0; index < products.length; index++ ) { %>
+            <% if (products.length==0) { %>
+                <div class="alert alert-primary center-block" role="alert" style="text-align:center"> <i
+                        class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    <strong>
+                        ¡ No posee productos asociados a su cuenta ! <br>
+                        Puede agregarlos haciendo click en la pestaña "PUBLICAR"
+                    </strong>
 
-                        <div class="products-items">
-                            <div class="img-producto">
-                                <img src='<%= products[index].imagenPerfil  %> ' alt='Imagen_producto'>
-                            </div>
+                </div>
+                <img src="/imgs/empty-box.png" alt="" style="width:5%; display: block; margin: 10px auto;">
+                <% } %>
 
-                            <a href="./producto-detalle.html">
-                                <%= products[index].descrip %>
-                                    <br>
-                                    <p>
-                                        <%= products[index].marca %>
-                                    </p>
-                            </a>
+                    <% if (locals.msj) { %>
 
-                            <p>
-                                $ <%= products[index].precio %>
-                            </p>
-
-                            <button class="btn_finalProducto">
-                                <a href="/productos/eliminarProducto/<%=products[index]._id  %> ">Eliminar producto</a>
-                            </button>
-
-
-                            <button class="btn_finalProducto">
-                                <a href="/productos/editarProducto">Editar producto</a>
-                            </button>
+                        <div class="alert alert-primary center-block" role="alert" style="text-align:center"> <i
+                                class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <strong>
+                                <%=msj %>
+                            </strong>
 
                         </div>
+                        <img src=<%=imagen %> alt="" style="width:5%; display: block; margin: 10px auto;">
                         <% } %>
 
-                </section>
-            </div>
+                            <div class="store-wrapper">
+
+                                <section class="products-list">
+                                    <% for( let index=0; index < products.length; index++ ) { %>
+
+                                        <div class="products-items">
+                                            <div class="img-producto">
+                                                <img src='<%= products[index].imagenPerfil  %> ' alt='Imagen_producto'>
+                                            </div>
+
+                                            <a href="./producto-detalle.html">
+                                                <%= products[index].descrip %>
+                                                    <br>
+                                                    <p>
+                                                        <%= products[index].marca %>
+                                                    </p>
+                                            </a>
+
+                                            <p>
+                                                $ <%= products[index].precio %>
+                                            </p>
+
+                                            <button class="btn_finalProducto">
+                                                <a href="/productos/eliminarProducto/<%=products[index]._id%>">Eliminar
+                                                    producto</a>
+                                            </button>
+
+
+                                            <button class="btn_finalProducto">
+                                                <a href="/productos/editarProducto/<%=products[index]._id %>">Editar
+                                                    producto</a>
+                                            </button>
+
+                                        </div>
+                                        <% } %>
+
+                                </section>
+                            </div>
         </div>
 
         <%- include('partials/newsletter') -%>
