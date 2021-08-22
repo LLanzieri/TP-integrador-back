@@ -135,9 +135,63 @@ let controller = {
         console.log(req.user);
         return res.render('publicar', { obj: req.user });
     },
-    crear_producto: (req, res) => {
-        console.log("estoy en la ruta post de crear producto");
-        return res.send("ANDA EL POST");
+    crear_producto: async (req, res) => {
+        let objetoUsuario = descrifrarUsuario(req);
+        let nombreImg = [];
+        let nombreImagenFinal = [];
+
+        // console.log(req.files);
+
+        if(req.body.title != '' && req.body.description != '' && req.body.price != '' ){
+            
+            for(let i=0; i < req.files.length; i++){
+                nombreImg[i] = req.files[i].filename;
+                if (nombreImg[i].includes(' ')) {
+                    nombreImg[i] = nombreImg.split(' ');
+                    nombreImg[i] = nombreImg.join('_');
+                    console.log(nombreImg[i]);
+                    nombreImagenFinal[i] = '/imgs/productos/' + nombreImg[i];
+                }
+                else nombreImagenFinal[i] = '/imgs/productos/' + nombreImg[i];
+            }
+
+            // console.log(nombreImagenFinal[0]);
+            // console.log(nombreImagenFinal[1]);
+            // console.log(objetoUsuario.data.email);
+
+
+            
+           await productos.create({
+                "genero": req.body.genero,
+                "tipo": req.body.tipo,
+                "categoria": req.body.categoria,
+                "marca": req.body.marca,
+                "talle": req.body.talle,
+                "nombre": req.body.title,
+                "descrip": req.body.description,
+                "precio": req.body.price,
+                "imagenPerfil": nombreImagenFinal[0],
+                "imagen_1": nombreImagenFinal[1],
+                "imagen_2": nombreImagenFinal[2],
+                "imagen_3": nombreImagenFinal[3],
+                "propietario": objetoUsuario.data.email
+
+            });
+            // console.log(productos);
+            // console.log(req.body);
+            
+            return res.redirect('/productos/misProductos');
+        }
+        else if(req.body.title === ''){
+            return res.render('publicar',{msj: 'Debe ingresar un Título'});
+        }
+        else if(req.body.description === ''){
+            return res.render('publicar',{msj: 'Debe ingresar una descripción'});
+        }
+        else if(req.body.price === ''){
+            return res.render('publicar',{msj: 'Debe ingresar un precio'});
+        }
+
     },
     mostrar_misProductosView: async (req, res) => {
         let objetoUsuario = descrifrarUsuario(req);

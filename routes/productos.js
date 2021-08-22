@@ -1,6 +1,26 @@
 const express = require('express');
 const router = express.Router();
 const verificarToken = require('../middlewares/mw_verificarToken');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/imgs/productos');
+    },
+    filename: (req, file, cb) => {
+        console.log(file);
+        let nombreImg = file.originalname;
+        //reemplazo espacios en blanco en caso de que la imagen los tenga en el nombre
+        if (nombreImg.includes(' ')) {
+            nombreImg = nombreImg.split(' ');
+            nombreImg = nombreImg.join('_');
+        }
+        cb(null, file.fieldname + '-' + nombreImg);
+    }
+});
+
+const upload = multer({ storage: storage });
+
 
 // IMPORTO CONTROLADORES
 const controller_productos = require('../controllers/controller_productos');
@@ -10,7 +30,7 @@ router.get('/misproductos', controller_productos.mostrar_misProductosView);
 
 //localhost/productos/publicar
 router.get('/publicar', verificarToken, controller_productos.mostrarVistaPublicar);
-router.post('/publicar', controller_productos.crear_producto);
+router.post('/publicar',upload.any('myFile','myFile1','myFile2','myFile3'), controller_productos.crear_producto);
 
 //localhost/productos
 router.get('/', controller_productos.mostrar_productosView);

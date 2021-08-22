@@ -5,8 +5,8 @@ let usuarioSchema = new mongoose.Schema({
     email: { type: String, required: true },
     password: { type: String, required: true },
     avatar: { type: String, required: true },
-    suscripcion: { type: Boolean, default: false },
-    propietario: { type: String, required: true }
+    suscripcion: { type: Boolean, default: false }
+    
 });
 
 module.exports = mongoose.model('usuario', usuarioSchema);
