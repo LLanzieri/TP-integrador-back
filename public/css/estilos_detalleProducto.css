@@ -69,7 +69,7 @@ header {
 
 .hamburger {
     background-color: #0a0b44;
-    /* border: 1px solid yellow; */
+    /*  border: 1px solid yellow; */
     width: 15%;
     box-sizing: border-box;
 }
@@ -79,7 +79,7 @@ header {
 }
 
 .logo {
-    /* border: 1px solid blueviolet;  */
+    /*  border: 1px solid blueviolet; */
     display: inline-block;
     width: 25%;
     box-sizing: border-box;
@@ -126,15 +126,15 @@ header {
     animation-direction: alternate;
 }
 
-/* ---------------------------------------------------------- */
+/* ------------------------- */
 
 /* MENU DESPLEGABLE */
 
 .contenedor-der {
     display: flex;
-    /*  border: 1px solid greenyellow; */
-    width: 30%;
-    justify-content: space-around;
+    /* border: 1px solid greenyellow; */
+    width: 130px;
+    justify-content: space-between;
 }
 
 .inicioSesion {
@@ -148,16 +148,6 @@ header {
     width: 100%;
 }
 
-.avatar {
-    width: 65%;
-    margin: 10px;
-    box-sizing: border-box;
-}
-
-.avatar img {
-    width: 100%;
-}
-
 .busqueda {
     background-color: #0a0b44;
     /* border: 1px solid red; */
@@ -166,6 +156,17 @@ header {
 }
 
 .busqueda img {
+    width: 100%;
+}
+
+.carrito {
+    background-color: #0a0b44;
+    /* border: 1px solid green; */
+    box-sizing: border-box;
+    width: 30%;
+}
+
+.carrito img {
     width: 100%;
 }
 
@@ -192,10 +193,6 @@ header {
 .barraBusquedaMobile button a {
     text-decoration: none;
     color: inherit;
-}
-
-.btn_misproductos {
-    display: none;
 }
 
 .menu-desplegable ul {
@@ -250,262 +247,7 @@ header {
     z-index: 999;
 }
 
-/* SLOGAN */
-
-.slogan {
-    color: black;
-    text-align: center;
-    font-style: italic;
-    width: 100%;
-    background-color: #cdcdcf;
-}
-
-.slogan hr {
-    width: 90%;
-    height: 2%;
-    margin: 2px auto;
-}
-
-.slogan h1 {
-    margin: 0;
-    padding: 25px;
-    color: black;
-    font-size: 20px;
-}
-
-/* CARRUSEL */
-
-.container-carousel {
-    background-image: url(../imgs/white3.jpg);
-    background-repeat: round;
-}
-
-/* PROMOCIONES */
-
-.promociones {
-    text-align: center;
-    padding: 15px 0;
-}
-
-.promociones h1 {
-    margin: 20px;
-}
-
-.promociones button {
-    margin: 15px;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-.promociones button:hover {
-    background-color: black;
-    color: white;
-}
-
-.promociones button a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* LISTA DE CARTAS
- */
-
-.container {
-    margin-top: 110px !important;
-    /* border: 1px solid blue; */
-}
-
-.card {
-    border: none;
-    outline: none;
-    background-color: white !important;
-    border-radius: 20px;
-    transition: transform .3s;
-}
-
-.card:hover {
-    transform: translateY(-15px);
-    transition: transform .3s;
-}
-
-.text1 {
-    font-size: 13px;
-    color: black;
-}
-
-.info {
-    line-height: 17px;
-}
-
-.star {
-    font-size: 25px !important;
-    color: yellow;
-}
-
-.cost span {
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.boton {
-    background-color: black;
-}
-
-.card:hover {
-    opacity: .8;
-    cursor: pointer;
-}
-
-.promociones button {
-    margin: 10px;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-.promociones button:hover {
-    background-color: black;
-    color: white;
-}
-
-/* BANNER */
-
-.banner {
-    background-color: #ff4a4f;
-    color: white;
-    text-align: center;
-}
-
-.banner h1 {
-    padding: 15px;
-    font-weight: bolder;
-}
-
-.banner p {
-    box-sizing: border-box;
-    font-size: 20px;
-    margin: 0;
-    padding: 5px;
-}
-
-.banner button {
-    margin: 15px;
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 10px;
-}
-
-.banner button:hover {
-    background-color: black;
-    color: white;
-}
-
-/* PRODUCTOS */
-
-.container-productos {
-    padding: 15px;
-    background-color: #cdcdcf;
-    text-align: center;
-}
-
-.container-productos h1 {
-    color: black;
-    padding: 15px;
-}
-
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.producto {
-    width: 30%;
-    margin: 10px auto;
-    padding: 3%;
-    border: 2px solid black;
-    background-color: rgb(192, 191, 191);
-    cursor: pointer;
-}
-
-.producto:hover {
-    -webkit-box-shadow: 5px 7px 7px 8px rgba(0, 0, 0, 0.72);
-    box-shadow: 5px 7px 7px 8px rgba(0, 0, 0, 0.72);
-}
-
-.producto img {
-    width: 100%;
-}
-
-.producto p {
-    font-size: 20px;
-    width: 100%;
-    margin: 5% 0;
-    text-align: center;
-}
-
-.container-productos button {
-    margin: 15px;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-.container-productos button:hover {
-    background-color: black;
-    color: white;
-}
-
-.container-productos button a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* NEWSLETTER */
-
-.newsletter {
-    padding: 20px;
-    background-image: url(../imgs/the-background-292720_1280.png);
-    text-align: center;
-}
-
-.newsletter h2 {
-    /* border: 1px solid yellow; */
-    text-align: center;
-    padding: 10px;
-    margin: 10px auto;
-    color: black;
-    width: 50%;
-    text-decoration: underline;
-    font-size: 20px;
-}
-
-.newsletter input {
-    display: block;
-    margin: auto;
-    padding: 10px;
-    width: 75%;
-    text-align: center;
-}
-
-.btn_suscribirse {
-    margin: 25px;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-.btn_suscribirse:hover {
-    background-color: black;
-    color: white;
-}
+/* ESTILOS DE producto-detalle */
 
 .contenedor-detalle {
     padding: 10px;
@@ -722,11 +464,23 @@ footer {
 @media (min-width: 745px) {
     /*     ESCONDO ELEMENTOS
  */
-    .hamburger, .busqueda, .vista-mobile, .tarjetasMobile, .barraBusquedaMobile {
+    .hamburger, .busqueda, .vista-mobile, .barraBusquedaMobile {
         display: none;
     }
     /*     MUESTRO ELEMENTOS  */
-    .mensaje, .barraBusqueda, .inicioSesion, .menu-desplegable {
+    .wrap-container {
+        width: 90%;
+        margin: auto;
+    }
+    hr {
+        margin: 1rem 0;
+        color: black/* !important */
+        ;
+        background-color: currentColor;
+        border: 0;
+        opacity: .25;
+    }
+    .mensaje, .barraBusqueda, .menu-desplegable {
         display: block;
     }
     .mensaje a, .titulo-footer, .cuerpo-footer p {
@@ -742,7 +496,7 @@ footer {
         height: min-content;
         margin: auto;
     }
-    .barraBusqueda button, .btn_misproductos {
+    .barraBusqueda button {
         display: block;
         margin: 15px auto;
         background-color: black;
@@ -754,16 +508,8 @@ footer {
         text-decoration: none;
         color: inherit;
     }
-    .btn_misproductos a {
-        color: white;
-        text-decoration: none;
-    }
-    .btn_misproductos a:hover {
-        color: white;
-        text-decoration: none;
-    }
     .top-menu {
-        justify-content: space-evenly;
+        justify-content: space-around;
     }
     .logo {
         width: 15%;
@@ -772,13 +518,10 @@ footer {
         width: 100%;
     }
     .contenedor-der {
-        width: 15%;
+        width: 100px;
     }
-    .inicioSesion {
-        width: 25%;
-    }
-    .avatar {
-        width: 65%;
+    .inicioSesion, .carrito {
+        width: 40%;
     }
     .btn-whatsapp {
         width: 2%;
@@ -822,25 +565,8 @@ footer {
     .subMenu ul li a {
         margin: 0%;
     }
-    #carouselExampleFade {
-        width: 100%;
-    }
-    .banner p {
-        font-size: 15px;
-    }
-    .producto {
-        padding: 1%;
-        width: 14%;
-        margin: 10px;
-    }
-    .producto p {
-        font-size: 15px;
-    }
-    .container-productos button {
-        padding: 1%;
-    }
     .contenedor-principal-detalle {
-        
+        /*,  .contenedor-principal-footer,  .contenedor-principal-header*/
         max-width: 1200px;
         margin: auto;
     }
@@ -857,7 +583,7 @@ footer {
     }
     .caja-footer {
         width: 33%;
-        /*  border: 1px solid white; */
+        /* border: 1px solid yellow; */
     }
     .mapa iframe {
         width: 100%;

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos_index.css">
+    <!-- <link rel="stylesheet" href="/css/estilos_detalleProducto.css"> -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/imgs/tshirt.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Detalle - ARG DESIGN</title>
+</head>
+
+<body>
+    <%- include('partials/cabecera') -%>
+
+    <!-- DETALLE DEL PRODUCTO -->
+    <div class="contenedor-principal-detalle">
+
+        <div class="main-container">
+
+            <div class="caja-carusel">
+
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src=' <%= producto.imagenPerfil  %>  ' class="d-block w-100" alt="...">
+                        </div>
+                        <% if (producto.imagen_1) { %>
+                            <div class="carousel-item">
+                                <img src="<%= producto.imagen_1 %> " class="d-block w-100" alt="...">
+                            </div>                         
+                        <% } %>
+                        <% if (producto.imagen_2) { %>
+                            <div class="carousel-item">
+                                <img src="<%= producto.imagen_2 %> " class="d-block w-100" alt="...">
+                            </div>                         
+                        <% } %>
+                        <% if (producto.imagen_3) { %>
+                            <div class="carousel-item">
+                                <img src="<%= producto.imagen_3 %> " class="d-block w-100" alt="...">
+                            </div>                         
+                        <% } %>
+                     
+                        
+                        
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+
+
+
+            </div>
+            <div class="contenedor-detalle">
+
+                <div class="titulo-detalle">
+                    <h1><%= producto.nombre  %> </h1>
+                    <div class="codigo">
+                        <%= producto.descrip  %>
+                    </div>
+                    <span>
+                        <h2><%= producto.precio  %></h2>
+                    </span>
+                </div>
+
+                <hr>
+
+                <div class="talle-container">
+                    <h3>Talle</h3>
+                    <div class="variedad-talles">
+                        <%=producto.talle  %> 
+
+                        <!-- SE PEUDE MODIFICAR SI HACEMOS PRDUCTOS CON VARIOS TALLES -->
+                        <!-- <li class="lista-talles"><a class="t-sin-stock" href="">38</a>
+                        </li>
+                        <li><a class="t-sin-stock" href="">39</a></li>
+                        <li><a href="">40</a></li>
+                        <li><a href="">41</a></li>
+                        <li><a href="">41.5</a></li>
+                        <li><a class="t-sin-stock" href="">42</a></li>
+                        <li><a class="t-sin-stock" href="">43</a></li>
+                        <li><a href="">43.5</a></li>
+                        <li><a href="">44</a></li>
+                        <li><a class="t-sin-stock" href="">45</a></li>
+                        <li>
+                            <div class="tabla-talles">
+                                <a href="">Tabla de talles</a>
+                            </div>
+                        </li> -->
+
+                    </div>
+
+                    <div class="container-tablaTalles">
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+
+                    <div class="btnComprar">
+                        <div class="btn-cart-fav col-4">
+                            <div class="col-12 comprar-container">
+                                <button class="add-to-cart btn btn-primary">Comprar <i
+                                        class="fa fa-shopping-cart"></i></button>
+                            </div>
+                            <div class="fav-container">
+                                <button class="favoritos btn">
+                                    <i class="fa fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <p> <i class="fa fa-share-alt"></i> Compartir en:</p>
+                        <a href="#">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-twitter-square"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-whatsapp"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- <div class="descripcion">
+            <h2>Descripción</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dolore beatae maxime placeat
+                cupiditate, sunt omnis delectus suscipit modi sed. Ipsum et, tempore veniam soluta eos assumenda ea
+                laboriosam laudantium.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam asperiores quod impedit eligendi,
+                perferendis optio repudiandae eum molestias magni distinctio quisquam maiores laudantium aspernatur
+                molestiae aliquid, voluptatem a recusandae! Incidunt?</p>
+        </div> -->
+    </div>
+
+
+        
+
+    <%- include('partials/newsletter') -%>
+
+    <%- include('partials/footer') -%>
+    <script src="/javascript_index.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

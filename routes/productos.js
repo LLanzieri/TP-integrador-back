@@ -32,6 +32,9 @@ router.get('/misproductos', controller_productos.mostrar_misProductosView);
 router.get('/publicar', verificarToken, controller_productos.mostrarVistaPublicar);
 router.post('/publicar', upload.any('myFile', 'myFile1', 'myFile2', 'myFile3'), controller_productos.crear_producto);
 
+//loaclhost/productos/detalle/:id
+router.get('/detalle/:id',controller_productos.mostrar_detalle);
+
 //localhost/productos
 router.get('/', controller_productos.mostrar_productosView);
 

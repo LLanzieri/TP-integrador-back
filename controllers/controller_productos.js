@@ -262,6 +262,16 @@ let controller = {
         return res.render('misProductos', { products: misProductos, usuario: objetoUsuario, msj: "¡ Producto editado exitosamente !", imagen: '/imgs/edit.png' });
     },
 
+    mostrar_detalle: async (req,res) => {
+
+        let objetoUsuario = descrifrarUsuario(req);
+        console.log('estoy en detalle');
+        let producto = await productos.findById(req.params.id);
+        console.log(producto);
+        return res.render('detalle', {producto, usuario: objetoUsuario});
+
+    },
+
     mostrar_misProductosView: async (req, res) => {
         let objetoUsuario = descrifrarUsuario(req);
         let misProductos;
