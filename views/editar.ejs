@@ -77,10 +77,7 @@
                     <div class="campo-publicarProducto">
                         <label for="categoria">Categoría:</label>
                         <select id="categoria" name="categoria">
-                            <option value="infantil" <% if (producto[0].categoria==='infantil' ) { %>
-                                selected
-                                <% } %>>Infantil
-                            </option>
+
                             <option value="futbol" <% if (producto[0].categoria==='futbol' ) { %>
                                 selected
                                 <% } %>>Fútbol
@@ -89,13 +86,21 @@
                                 selected
                                 <% } %>>Tenis
                             </option>
-                            <option value="basket" <% if (producto[0].categoria==='basket' ) { %>
+                            <option value="running" <% if (producto[0].categoria==='running' ) { %>
                                 selected
-                                <% } %>>Basket
+                                <% } %>>Running
+                            </option>
+                            <option value="natacion" <% if (producto[0].categoria==='natacion' ) { %>
+                                selected
+                                <% } %>>Natación
                             </option>
                             <option value="urban" <% if (producto[0].categoria==='urban' ) { %>
                                 selected
                                 <% } %>>Urban
+                            </option>
+                            <option value="infantil" <% if (producto[0].categoria==='infantil' ) { %>
+                                selected
+                                <% } %>>Infantil
                             </option>
                         </select>
 
@@ -118,10 +123,6 @@
                             <option value="puma" <% if (producto[0].marca==='puma' ) { %>
                                 selected
                                 <% } %>>Puma
-                            </option>
-                            <option value="fila" <% if (producto[0].marca==='fila' ) { %>
-                                selected
-                                <% } %>>Fila
                             </option>
                         </select>
 

@@ -23,7 +23,7 @@
             <h1>Escoge un producto</h1>
             <div class="store-wrapper">
                 <div class="category-list">
-                    <a class="category-rama" href="/productos">Todo</a>
+                    <a class="category-rama" href="/productos"> <u>Ver todos los productos</u></a>
                     <hr>
                     <form action="/productos/buscar" method="post">
 
@@ -58,7 +58,6 @@
                                             <% } %>>
                                                 <label for="accesorioMujer">Accesorios</label>
                                 </div>
-
                             </div>
                         </div>
 
@@ -103,14 +102,32 @@
                         <div class="cat">
                             <h5>Niños</h5>
                             <div class="scroll">
-
-                                <a href="" class="category-items">Indumentaria</a>
-                                <a href="" class="category-items">Calzado</a>
-                                <a href="" class="category-items">Accesorios</a>
-                                <a href="" class="category-items">Accesorios</a>
-                                <a href="" class="category-items">Accesorios</a>
-                                <a href="" class="category-items">Accesorios</a>
-
+                                <div class="tilde">
+                                    <input type="checkbox" name="indumentariaNiño" id="indumentariaNiño" <% if
+                                        (locals.rta) { %>
+                                    <% if (locals.rta.indumentariaNiño==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="indumentariaNiño">Indumentaria</label>
+                                </div>
+                                <div class="tilde">
+                                    <input type="checkbox" name="calzadoNiño" id="calzadoNiño" <% if (locals.rta) { %>
+                                    <% if (locals.rta.calzadoNiño==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="calzadoNiño">Calzado</label>
+                                </div>
+                                <div class="tilde">
+                                    <input type="checkbox" name="accesorioNiño" id="accesorioNiño" <% if (locals.rta) {
+                                        %>
+                                    <% if (locals.rta.accesorioNiño==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="accesorioNiño">Accesorios</label>
+                                </div>
                             </div>
                         </div>
                         <hr>
@@ -118,13 +135,34 @@
                             <h5>Sin Género</h5>
                             <div class="scroll">
 
-                                <a href="" class="category-items">Indumentaria</a>
-                                <a href="" class="category-items">Calzado</a>
-                                <a href="" class="category-items">Accesorios</a>
-                                <a href="" class="category-items">Accesorios</a>
-                                <a href="" class="category-items">Accesorios</a>
-                                <a href="" class="category-items">Accesorios</a>
+                                <div class="tilde">
+                                    <input type="checkbox" name="indumentariaSingen" id="indumentariaSingen" <% if
+                                        (locals.rta) { %>
+                                    <% if (locals.rta.indumentariaSingen==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="indumentariaSingen">Indumentaria</label>
+                                </div>
+                                <div class="tilde">
+                                    <input type="checkbox" name="calzadoSingen" id="calzadoSingen" <% if (locals.rta) {
+                                        %>
+                                    <% if (locals.rta.calzadoSingen==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="calzadoSingen">Calzado</label>
+                                </div>
 
+                                <div class="tilde">
+                                    <input type="checkbox" name="accesorioSingen" id="accesorioSingen" <% if
+                                        (locals.rta) { %>
+                                    <% if (locals.rta.accesorioSingen==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="accesorioSingen">Accesorios</label>
+                                </div>
                             </div>
                         </div>
                         <hr>
@@ -132,20 +170,78 @@
                             <h5>Deporte</h5>
                             <div class="scroll">
 
-                                <a href="" class="category-items">Fútbol</a>
-                                <a href="" class="category-items">Basquet</a>
-                                <a href="" class="category-items">Tenis</a>
-                                <a href="" class="category-items">Natación</a>
+                                <div class="tilde">
+                                    <input type="checkbox" name="futbol" id="futbol" <% if (locals.rta) { %>
+                                    <% if (locals.rta.futbol==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="futbol">Fútbol</label>
+                                </div>
+                                <div class="tilde">
+                                    <input type="checkbox" name="tenis" id="tenis" <% if (locals.rta) { %>
+                                    <% if (locals.rta.tenis==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="tenis">Tenis</label>
+                                </div>
+                                <div class="tilde">
+                                    <input type="checkbox" name="running" id="running" <% if (locals.rta) { %>
+                                    <% if (locals.rta.running==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="running">Running</label>
+                                </div>
+                                <div class="tilde">
+                                    <input type="checkbox" name="natacion" id="natacion" <% if (locals.rta) { %>
+                                    <% if (locals.rta.natacion==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="natacion">Natación</label>
+                                </div>
+
                             </div>
                         </div>
                         <hr>
                         <div class="cat">
                             <h5>Marcas</h5>
                             <div class="scroll">
+                                <div class="tilde">
+                                    <input type="checkbox" name="nike" id="nike" <% if (locals.rta) { %>
+                                    <% if (locals.rta.nike==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="nike">Nike</label>
+                                </div>
+                                <div class="tilde">
+                                    <input type="checkbox" name="adidas" id="adidas" <% if (locals.rta) { %>
+                                    <% if (locals.rta.adidas==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="adidas">Adidas</label>
+                                </div>
 
-                                <a href="" class="category-items">Nike</a>
-                                <a href="" class="category-items">Adidas</a>
-                                <a href="" class="category-items">Reebok</a>
+                                <div class="tilde">
+                                    <input type="checkbox" name="reebok" id="reebok" <% if (locals.rta) { %>
+                                    <% if (locals.rta.reebok==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="reebok">Reebok</label>
+                                </div>
+                                <div class="tilde">
+                                    <input type="checkbox" name="puma" id="puma" <% if (locals.rta) { %>
+                                    <% if (locals.rta.puma==='on' ) { %>
+                                        checked
+                                        <% } %>
+                                            <% } %>>
+                                                <label for="puma">Puma</label>
+                                </div>
                             </div>
                         </div>
 
@@ -155,26 +251,55 @@
                 </div>
 
                 <section class="products-list">
-                    <% for( let index=0; index < products.length; index++ ) { %>
-
-                        <div class="products-items">
-                            <div class="img-producto">
-                                <img src='<%= products[index].imagenPerfil  %> ' alt='Imagen_producto'>
+                    <% if (products.length==0) { %>
+                        <div style="margin:10px auto;">
+                            <div class="alert alert-primary center-block" role="alert"
+                                style="text-align:center; width:85%; margin: 0 auto;"> <i
+                                    class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                <strong>
+                                    ¡ No hay productos que coincidan con tu búsqueda ! <br>
+                                    Puede agregarlos haciendo click en la pestaña "PUBLICAR"
+                                </strong>
                             </div>
+                            <img src="/imgs/empty-box.png" alt="" style="width:20%; display: block; margin: 10px auto;">
+                        </div>
+                        <% } %>
 
-                            <a href="/productos/detalle/<%= products[index]._id %> ">
-                                <%= products[index].descrip %>
-                                    <br>
+
+                            <% for( let index=0; index < products.length; index++ ) { %>
+
+                                <div class="products-items">
+                                    <div class="img-producto">
+                                        <img src='<%= products[index].imagenPerfil  %> ' alt='Imagen_producto'>
+                                    </div>
+
                                     <p>
-                                        <%= products[index].marca %>
+                                        <br>
+                                        <i>
+                                            <%= products[index].categoria %>
+                                        </i>
                                     </p>
 
+                                    <a href="/productos/detalle/<%= products[index]._id %> ">
+                                        <p>
+                                            <%= products[index].nombre %>
+                                        </p>
+                                        <p>
+                                            <%= products[index].descrip %>
+                                        </p>
+
+                                        <p>
+                                            <i>
+                                                <%= products[index].marca %>
+                                            </i>
+                                        </p>
+                                    </a>
                                     <p>
                                         $ <%= products[index].precio %>
                                     </p>
-                            </a>
-                        </div>
-                        <% } %>
+
+                                </div>
+                                <% } %>
 
                 </section>
             </div>

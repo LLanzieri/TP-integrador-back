@@ -35,7 +35,7 @@
                     </strong>
 
                 </div>
-                <img src="/imgs/empty-box.png" alt="" style="width:5%; display: block; margin: 10px auto;">
+                <img src="/imgs/empty-box.png" alt="" style="width:10%; display: block; margin: 10px auto;">
                 <% } %>
 
                     <% if (locals.msj) { %>
@@ -47,7 +47,7 @@
                             </strong>
 
                         </div>
-                        <img src=<%=imagen %> alt="" style="width:5%; display: block; margin: 10px auto;">
+                        <img src=<%=imagen %> alt="" style="width:10%; display: block; margin: 10px auto;">
                         <% } %>
 
                             <div class="store-wrapper">
@@ -60,12 +60,25 @@
                                                 <img src='<%= products[index].imagenPerfil  %> ' alt='Imagen_producto'>
                                             </div>
 
+                                            <p>
+                                                <br> <i>
+                                                    <%= products[index].categoria %>
+                                                </i>
+
+                                            </p>
+
                                             <a href="/productos/detalle/<%= products[index]._id %> ">
-                                                <%= products[index].descrip %>
-                                                    <br>
-                                                    <p>
-                                                        <%= products[index].marca %>
-                                                    </p>
+                                                <p>
+                                                    <%= products[index].nombre %>
+                                                </p>
+                                                <p>
+                                                    <%= products[index].descrip %>
+                                                </p>
+
+                                                <p>
+                                                    <i><%= products[index].marca %></i>
+                                                    
+                                                </p>
                                             </a>
 
                                             <p>

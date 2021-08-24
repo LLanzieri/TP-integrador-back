@@ -61,6 +61,107 @@ let controller = {
             return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
         }
 
+        /* OPCIONES DE NIÑOS */
+        if (opcion == 8) {
+            let objetosEncontrados = await productos.find({ tipo: 'indumentaria', genero: 'niños' });
+            opcionesTildadas = { "indumentariaNiño": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 9) {
+            let objetosEncontrados = await productos.find({ tipo: 'calzado', genero: 'niños' });
+            opcionesTildadas = { "calzadoNiño": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+
+        }
+        if (opcion == 10) {
+            let objetosEncontrados = await productos.find({ tipo: 'accesorio', genero: 'niños' });
+            opcionesTildadas = { "accesorioNiño": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 11) {
+            let objetosEncontrados = await productos.find({ genero: 'niños' });
+            opcionesTildadas = { "accesorioNiño": "on", "calzadoNiño": "on", "indumentariaNiño": "on" };
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+
+        /* OPCIONES SIN GENERO */
+        if (opcion == 12) {
+            let objetosEncontrados = await productos.find({ tipo: 'indumentaria', genero: 'singen' });
+            opcionesTildadas = { "indumentariaSingen": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 13) {
+            let objetosEncontrados = await productos.find({ tipo: 'calzado', genero: 'singen' });
+            opcionesTildadas = { "calzadoSingen": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+
+        }
+        if (opcion == 14) {
+            let objetosEncontrados = await productos.find({ tipo: 'accesorio', genero: 'singen' });
+            opcionesTildadas = { "accesorioSingen": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 15) {
+            let objetosEncontrados = await productos.find({ genero: 'singen' });
+            opcionesTildadas = { "accesorioSingen": "on", "calzadoSingen": "on", "indumentariaSingen": "on" };
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        /* OPCIONES DEPORTES */
+        if (opcion == 16) {
+            let objetosEncontrados = await productos.find({ categoria: 'futbol' });
+            opcionesTildadas = { "futbol": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 17) {
+            let objetosEncontrados = await productos.find({ categoria: 'tenis' });
+            opcionesTildadas = { "tenis": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+
+        }
+        if (opcion == 18) {
+            let objetosEncontrados = await productos.find({ categoria: 'running' });
+            opcionesTildadas = { "running": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 19) {
+            let objetosEncontrados = await productos.find({ categoria: 'natacion' });
+            opcionesTildadas = { "natacion": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 20) {
+            let objetosEncontrados = await productos.find({ categoria: 'futbol', categoria: 'tenis', categoria: 'running', categoria: 'natacion' });
+            opcionesTildadas = { "futbol": "on", "tenis": "on", "running": "on", "natacion": "on" };
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+
+        /* OPCIONES MARCAS */
+        if (opcion == 21) {
+            let objetosEncontrados = await productos.find({ marca: 'nike' });
+            opcionesTildadas = { "nike": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 22) {
+            let objetosEncontrados = await productos.find({ marca: 'adidas' });
+            opcionesTildadas = { "adidas": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+
+        }
+        if (opcion == 23) {
+            let objetosEncontrados = await productos.find({ marca: 'reebok' });
+            opcionesTildadas = { "reebok": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 24) {
+            let objetosEncontrados = await productos.find({ marca: 'puma' });
+            opcionesTildadas = { "puma": "on" }
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+        if (opcion == 25) {
+            let objetosEncontrados = await productos.find({ marca: 'nike', marca: 'adidas', marca: 'reebok', marca: 'puma' });
+            opcionesTildadas = { "nike": "on", "adidas": "on", "reebok": "on", "puma": "on" };
+            return res.render('listadoProductos', { products: objetosEncontrados, rta: opcionesTildadas, usuario: objetoUsuario });
+        }
+
     },
 
     buscarProductos: async (req, res) => {
@@ -118,6 +219,127 @@ let controller = {
                 objDevuelto.push(objAuxiliar);
             }
         }
+        if (opcionesTildadas.indumentariaNiño === 'on') {
+            let objetosEncontrados = await productos.find({ tipo: 'indumentaria', genero: 'niños' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.calzadoNiño === 'on') {
+            let objetosEncontrados = await productos.find({ tipo: 'calzado', genero: 'niños' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.accesorioNiño === 'on') {
+            let objetosEncontrados = await productos.find({ tipo: 'accesorio', genero: 'niños' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.indumentariaSingen === 'on') {
+            let objetosEncontrados = await productos.find({ tipo: 'indumentaria', genero: 'singen' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.calzadoSingen === 'on') {
+            let objetosEncontrados = await productos.find({ tipo: 'calzado', genero: 'singen' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.accesorioSingen === 'on') {
+            let objetosEncontrados = await productos.find({ tipo: 'accesorio', genero: 'singen' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.accesorioSingen === 'on') {
+            let objetosEncontrados = await productos.find({ tipo: 'accesorio', genero: 'singen' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.futbol === 'on') {
+            let objetosEncontrados = await productos.find({ categoria: 'futbol' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.tenis === 'on') {
+            let objetosEncontrados = await productos.find({ categoria: 'tenis' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.running === 'on') {
+            let objetosEncontrados = await productos.find({ categoria: 'running' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.natacion === 'on') {
+            let objetosEncontrados = await productos.find({ categoria: 'natacion' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.nike === 'on') {
+            let objetosEncontrados = await productos.find({ marca: 'nike' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.adidas === 'on') {
+            let objetosEncontrados = await productos.find({ marca: 'adidas' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.reebok === 'on') {
+            let objetosEncontrados = await productos.find({ marca: 'reebok' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+        if (opcionesTildadas.puma === 'on') {
+            let objetosEncontrados = await productos.find({ marca: 'puma' });
+
+            for (let index = 0; index < objetosEncontrados.length; index++) {
+                objAuxiliar = objetosEncontrados[index];
+                objDevuelto.push(objAuxiliar);
+            }
+        }
+
 
         console.log(objDevuelto);
         return res.render('listadoProductos', { products: objDevuelto, rta: opcionesTildadas, usuario: objetoUsuario });
@@ -167,10 +389,6 @@ let controller = {
             else nombreImagenFinal[i] = '/imgs/productos/' + nombreImg[i];
         }
 
-        // console.log(nombreImagenFinal[0]);
-        // console.log(nombreImagenFinal[1]);
-        // console.log(objetoUsuario.data.email);
-
         console.log(req.body);
         await productos.create({
             "genero": req.body.genero,
@@ -188,8 +406,6 @@ let controller = {
             "propietario": objetoUsuario.data.email
 
         });
-        // console.log(productos);
-        // console.log(req.body);
 
         misProductos = await productos.find({ propietario: objetoUsuario.data.email });
         return res.render('misProductos', { products: misProductos, usuario: objetoUsuario, msj: "¡ Producto creado exitosamente !", imagen: '/imgs/create.png' });
@@ -262,13 +478,13 @@ let controller = {
         return res.render('misProductos', { products: misProductos, usuario: objetoUsuario, msj: "¡ Producto editado exitosamente !", imagen: '/imgs/edit.png' });
     },
 
-    mostrar_detalle: async (req,res) => {
+    mostrar_detalle: async (req, res) => {
 
         let objetoUsuario = descrifrarUsuario(req);
         console.log('estoy en detalle');
         let producto = await productos.findById(req.params.id);
         console.log(producto);
-        return res.render('detalle', {producto, usuario: objetoUsuario});
+        return res.render('detalle', { producto, usuario: objetoUsuario });
 
     },
 
@@ -292,6 +508,7 @@ let controller = {
         misProductos = await productos.find({ propietario: objetoUsuario.data.email });
         return res.render('misProductos', { products: misProductos, usuario: objetoUsuario, msj: "¡ Producto eliminado exitosamente !", imagen: '/imgs/delete.png' });
     },
+
     buscarOfertas: async (req, res) => {
         let objetoUsuario = descrifrarUsuario(req);
         console.log("ENTRE A OFERTAS");
@@ -301,7 +518,6 @@ let controller = {
 
         return res.render('listadoProductos', { products: objetosEncontrados, usuario: objetoUsuario });
     }
-
 }
 
 function descrifrarUsuario(req) {

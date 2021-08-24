@@ -343,10 +343,12 @@ header {
 }
 
 .products-items {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 80%;
     margin: 10% auto;
     padding: 10px;
+    background-image: url("/imgs/fondo.jpg");
+    border-radius: 5%;
 }
 
 .products-items a {
@@ -553,7 +555,7 @@ footer {
     }
     .products-list .products-items {
         width: 30%;
-        background: white;
+        /* background: white; */
         /* margin-left: 3%; */
         cursor: pointer;
     }
