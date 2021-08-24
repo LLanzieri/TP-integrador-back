@@ -340,7 +340,6 @@ let controller = {
             }
         }
 
-
         console.log(objDevuelto);
         return res.render('listadoProductos', { products: objDevuelto, rta: opcionesTildadas, usuario: objetoUsuario });
 
@@ -366,13 +365,13 @@ let controller = {
         //console.log(req.files);
 
         if (req.body.title === '') {
-            return res.render('publicar', { msj: 'Debe ingresar un Título.' });
+            return res.render('publicar', { msj: 'Debe ingresar un título para su producto.' });
         }
         if (req.body.description === '') {
-            return res.render('publicar', { msj: 'Debe ingresar una descripción.' });
+            return res.render('publicar', { msj: 'Debe ingresar una descripción de su producto.' });
         }
         if (req.body.price === '') {
-            return res.render('publicar', { msj: 'Debe ingresar un precio.' });
+            return res.render('publicar', { msj: 'Debe ingresar un precio para su producto.' });
         }
         if (req.files.length == 0) {
             return res.render('publicar', { msj: 'Debe ingresar imágenes de su producto.' });
@@ -409,7 +408,6 @@ let controller = {
 
         misProductos = await productos.find({ propietario: objetoUsuario.data.email });
         return res.render('misProductos', { products: misProductos, usuario: objetoUsuario, msj: "¡ Producto creado exitosamente !", imagen: '/imgs/create.png' });
-
     },
 
     editarProducto: async (req, res) => {
@@ -423,20 +421,21 @@ let controller = {
         let obj;
         let nombreImg = [];
         let nombreImagenFinal = [];
+        productoElegido = await productos.find({ _id: req.params.id });
 
         // SI HAY ALGUN CAMPO INCOMPLETO, CORTO
 
         if (req.body.title === '') {
-            return res.render('editar', { msj: 'Debe ingresar un Título' });
+            return res.render('editar', { producto: productoElegido, msj: 'Debe ingresar un título para su producto.' });
         }
         if (req.body.description === '') {
-            return res.render('editar', { msj: 'Debe ingresar una descripción' });
+            return res.render('editar', { producto: productoElegido, msj: 'Debe ingresar una descripción de su producto.' });
         }
         if (req.body.price === '') {
-            return res.render('editar', { msj: 'Debe ingresar un precio' });
+            return res.render('editar', { producto: productoElegido, msj: 'Debe ingresar un precio para su producto.' });
         }
         if (req.files.length == 0) {
-            return res.render('editar', { msj: 'Debe ingresar imágenes de su producto.' });
+            return res.render('editar', { producto: productoElegido, msj: 'Debe ingresar imágenes de su producto.' });
         }
 
         // SINO, EDITO 
