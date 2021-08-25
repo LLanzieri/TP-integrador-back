@@ -36,6 +36,11 @@ app.set('view engine', 'ejs');
 // INDICO DONDE IR A BUSCAR RECURSOS DE LA CARPETA PUBLICA
 app.use(express.static(__dirname + '/public'));
 
+//MW DE RUTAS VISITADAS
+const mw_rutas_visitadas = require('./middlewares/rutas_visitadas');
+app.use(mw_rutas_visitadas);
+
+
 /* ------------------------- RUTAS ---------------------------------*/
 
 //Ruta principal
