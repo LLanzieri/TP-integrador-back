@@ -13,3 +13,10 @@
 Nuestra página web se trata de un sitio ecommerce que fue desarrollado aplicando los conocimientos aprendidos a lo largo de los diferentes temas vistos en clase, utilizando los siguientes puntos claves para este módulo:
 
 - Node Js.
+- Express.
+- Patrón MVC.
+- EJS para la utilización de vistas.
+- Rutas dinámicas.
+- Middlewares.
+- Almacenamiento de archivos de lado del servidor con Multer.
+- Base de datos NoSQL con Mongo DB - operaciones CRUD - ABM de productos.
